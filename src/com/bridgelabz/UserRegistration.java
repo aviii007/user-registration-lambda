@@ -1,5 +1,10 @@
 package com.bridgelabz;
 
+/**
+ * Author:-Ashvini Kanojia
+ * Date:-04/04/2022
+ */
+
 import java.util.regex.Pattern;
 
 //Functional interface
@@ -21,6 +26,12 @@ public class UserRegistration {
             return "Last Name is " + Pattern.compile(pattern).matcher(lastName).matches();
         };
         System.out.println(isValidLastName.validate("^[A-Z]{1}[a-z]{2,}$", "Kanojia"));
+
+        Validation isValidEmail = (pattern, email) -> {
+            return "Email is " + Pattern.compile(pattern).matcher(email).matches();
+        };
+        System.out.println(isValidEmail.validate("^[a-z]+[+-_.]*[a-z]*[@][a-z]+[.][a-z]{2,4}[.]*([a-z]{2})*$",
+                "kanojia.avi@gmail.com"));
 
     }
 }
